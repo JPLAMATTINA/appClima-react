@@ -1,0 +1,10 @@
+{busqueda ? (
+    <ul>
+      {paises.filter((paises) =>paises.country.slice(0, largoBusqueda).toLowerCase() === busqueda.toLowerCase())
+        .map((paises, i) => (<Link to={"/clima/" + paises.id} key={i}><li>{paises.city}</li></Link>
+        ))}
+      </ul>) : (<ul>{paises.map((paises, i) => (<Link to={"/clima/" + paises.id} key={i}>
+        <li> {paises.id} {paises.city}</li></Link>
+      ))}
+    </ul>
+  )}
